@@ -53,4 +53,48 @@ fn main() {
     8. What is a standard floating point number?
     9. Are all floating point numbers signed or unsigned?
     */
+
+    /* == Answers 14/09 == */
+    //1. No, some type inference is done by Rust but all types must be known at compile time
+    //2 & 3.
+    let x: u32 = 78_954; //integer
+    let y: f64 = 456.45; //float
+    let c: char = 'c'; //char *note the single quotes
+    let t: bool = true; // boolean
+    print!(
+        "These are the four scalar types in Rust.
+    1. integer --> {x}
+    2. float   --> {y}
+    3. char    --> {c}
+    4. boolean --> {t}"
+    );
+    //4. Signed integers are integers that accept a negative number where as unsigned are 0 or positive.
+    let _signed: i16 = -4;
+    let _unsigned: u16 = 7;
+    //5. _ is used as a convenience space separator for readability --> see x: u32 above.
+    //6. usize or isize are often used for indexing a collection
+    //7. integer overflow is when by some programming calculation the integer exceeds it's bit size, it is dealt with
+    //   in various ways but most throw an error and should be dealt with gracefully, there are methods available for
+    //   that purpose.
+    //8 & 9. See above for standard floating point, f64 and they are always signed.
+
+    /*
+    ========= 14/09/2022 Review Questions for next day ==========
+    1.  The char type is specified how?
+    2.  Are they unicode? Are emoji, kanji etc available?
+    3.  Other that scalar types what are the other primitive types in Rust?
+    4.  Which type is fixed in length and cannot grow or shrink? Can you write an example?
+    5.  Is destructuring available to this type? Can you write an example?
+    6.  In python we access a value in this type using x[0] syntax, write example for Rust.
+    7.  What type represents and empty tuple, ()?
+    8.  Arrays and tuples differ in what ways in Rust?
+    9.  Are Arrays fixed or flexible in length?
+    10. If you want a flexible array, what type would you use?
+    11. Are arrays allocated to the stack or the heap?
+    12. How can you explicitly write the type of an array?
+    13. If you want an array of same values how could you write that? Give an example.
+    14. How can you access the second value in an array, please write the code.
+    15. If you try to access an array value out of index, what happens if at runtime?
+    16. The above behaviour is the same as C? Why is this a good thing?
+    */
 }

@@ -66,7 +66,7 @@ fn main() {
     1. integer --> {x}
     2. float   --> {y}
     3. char    --> {c}
-    4. boolean --> {t}"
+    4. boolean --> {t}\n"
     );
     //4. Signed integers are integers that accept a negative number where as unsigned are 0 or positive.
     let _signed: i16 = -4;
@@ -96,5 +96,33 @@ fn main() {
     14. How can you access the second value in an array, please write the code.
     15. If you try to access an array value out of index, what happens if at runtime?
     16. The above behaviour is the same as C? Why is this a good thing?
+    */
+
+    /* == Answers 15/09 == */
+    // 1 & 2. Char types are specified with single quotes as below and are unicode.
+    let _b: char = '4';
+
+    //3. The other primitive types are compount types.
+
+    //4. Tuples are of fixed length and cannot grow or shrink. Type annotations are optional.
+    let _t = (1, 'b', "trust");
+    let tup: (u8, char, bool) = (1, 't', true);
+
+    //5. Yes destructuring is available
+    let (_k, _d, _h) = tup;
+    // note
+    let (u, ..) = tup;
+    println!("u is --> {u}");
+    println!("tup is ==> {tup:?}"); // note the pretty print :?
+
+    //6. Another way to access the values in a tuple is as follows.
+    let c = tup.2;
+    print!("c is --> {c}\n");
+
+    /*  ========= 15/09/2022 Review Questions for next day ==========
+    1. What case does Rust use for variables and functions?
+    2. Are type annotations required for all parameters?
+    3. What is the dif between statements and expressions in Rust?
+    4. In python, x = y = 6 is valid code. How about Rust? Explain!
     */
 }

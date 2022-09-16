@@ -61,12 +61,12 @@ fn main() {
     let y: f64 = 456.45; //float
     let c: char = 'c'; //char *note the single quotes
     let t: bool = true; // boolean
-    print!(
+    println!(
         "These are the four scalar types in Rust.
     1. integer --> {x}
     2. float   --> {y}
     3. char    --> {c}
-    4. boolean --> {t}\n"
+    4. boolean --> {t}"
     );
     //4. Signed integers are integers that accept a negative number where as unsigned are 0 or positive.
     let _signed: i16 = -4;
@@ -98,7 +98,7 @@ fn main() {
     16. The above behaviour is the same as C? Why is this a good thing?
     */
 
-    /* == Answers 15/09 == */
+    /* == Answers 15/09 & 16/09 == */
     // 1 & 2. Char types are specified with single quotes as below and are unicode.
     let _b: char = '4';
 
@@ -117,9 +117,44 @@ fn main() {
 
     //6. Another way to access the values in a tuple is as follows.
     let c = tup.2;
-    print!("c is --> {c}\n");
+    println!("c is --> {c}");
 
-    /*  ========= 15/09/2022 Review Questions for next day ==========
+    //7. The 'unit' type, returned by an empty return, or empty value is written as follows
+    let _unit_t = ();
+
+    //8. Arrays cannot hold values of different types where as tuples can. Array are also accessed
+    // in a different way
+
+    //9. Arrays, like tuples are fixed in length
+
+    //10. Flexible array like strucktures are provided by the vector type.
+    let mut flex_arr = vec![5, 4, 3, 2, 1];
+    println!(
+        "Length: {}, Capacity : {}",
+        flex_arr.len(),
+        flex_arr.capacity()
+    );
+    flex_arr.pop();
+    println!("Vector now --> {flex_arr:?}");
+
+    //11. Arrays are allocated to the stack and are a useful structure to hold
+    // collections of known fixed length, such as 'days_of_the_week'
+
+    //12.  Array types are written as follows
+    let arr: [i32; 5] = [10, 9, 8, 7, 6];
+
+    //13: Array of same values has a short cut syntax which looks like this
+    let _same: [i32; 5] = [4; 5]; // same as let _same: [i32; 5] = [4, 4, 4, 4, 4];
+
+    //14. Choose the second val in array as below, similar to js and python
+    let _second = arr[1];
+
+    //15. If you try to access a value out of index, a runtim error --> panic occurs. <-- Good!!
+
+    //16. In other languages, such as C, there is a possibility that invalid memory is accessed.
+    // Rust prevents this from happening and protects against this point of possible security error.
+
+    /*  ========= 15/09/2022 && 16/09/2022 Review Questions for next day ==========
     1. What case does Rust use for variables and functions?
     2. Are type annotations required for all parameters?
     3. What is the dif between statements and expressions in Rust?

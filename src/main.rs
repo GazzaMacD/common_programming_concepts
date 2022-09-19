@@ -160,4 +160,32 @@ fn main() {
     3. What is the dif between statements and expressions in Rust?
     4. In python, x = y = 6 is valid code. How about Rust? Explain!
     */
+
+    // == Answers 19/09  ==
+    // 1. snake case is used.
+    //2. Yes type annotations are required for all parameters in Rust.
+    //3. Statements end with a semi colon and do not evaluate to anything where
+    //   as  expressions do evaluate to something
+    //4. y does not return a value so there is nothing for x to bind to.
+
+    // ========= Questions 19/9 ===========
+    // 1. Are return types necessary with functions in Rust, please give an example.
+    // 2. Is return keyword always necessary in Rust? Examples please.
+    // 3. Is the following code correct? If so, say why and if not can you correct it?
+    // fn plus_one(x: i32) -> i32 {
+    //      x + 1;
+    //  }
+    // ------- Control Flow ---------
+    // 4. Can you write a basic function which checks a number and has three optional paths, greater
+    // than 5, less than 5 or equal 5 and depending on the random number generated, let the user know.
+    // 5. Is this valid code in Rust? Please explain and correct if necessary.
+    // fn is_zero(x: i32) -> bool {
+    //    if x {
+    //      true
+    //    } else {
+    //        false
+    //    }
+    // }
+    // 6. Is 'if' an expression or a statement? What are the implications in code.
+    // 7. If you have too many else if expressions what could you use instead?
 }

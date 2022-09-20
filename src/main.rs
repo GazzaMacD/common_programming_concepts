@@ -205,6 +205,23 @@ fn main() {
     // Please see corrected is_zero below
     let num = is_zero(-8);
     println!("Number is zero == {num} ");
+
+    //  ========= 20/09/2022 Review Questions for next day ==========
+    // ------------Loops -------------
+    //1. What three loop key words are there?
+    //2. Can you give an example of the first kind of loop with key words 'continue' and 'break'
+    //3. If you write code after break word what are you doing, please give an example.
+    //4. If you label a loop, how might you use it?
+    //5. Give an example of a while loop.
+    //6. Give an example of a for loop.
+    //7. Which loops tend to be most prevelant in Rust code and why?
+
+    // ========= Example programs ===========
+    // 1. Conver temperatures to fahrenheit or celsius
+    let from_celsius = convert_temperature(30.0, 'c');
+    println!("30 degrees C in fahrenheit is {from_celsius}");
+    let from_fahrenheit = convert_temperature(101.9, 'f');
+    println!("101.9 F in celsius is {from_fahrenheit}");
 } // fn main
 
 fn plus_one(x: i32) -> i32 {
@@ -242,4 +259,17 @@ fn is_zero(x: i32) -> bool {
     } else {
         false
     }
+}
+
+fn convert_temperature(temp: f64, c_or_f: char) -> String {
+    let mut result: f64 = 0.0;
+    if c_or_f == 'c' {
+        result = temp * 1.8 + 32.0;
+    } else if c_or_f == 'f' {
+        result = (temp - 32.0) * 0.5556;
+    } else {
+        println!("The second argument must be 'c' or 'f' to indicate the temperature entered.")
+    }
+    let result = result.to_string();
+    return result;
 }

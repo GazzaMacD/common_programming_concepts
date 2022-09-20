@@ -1,3 +1,4 @@
+use std::io;
 fn main() {
     /*
     ========= 12/09/2022 Review Questions for next day ==========
@@ -177,7 +178,7 @@ fn main() {
     //  }
     // ------- Control Flow ---------
     // 4. Can you write a basic function which checks a number and has three optional paths, greater
-    // than 5, less than 5 or equal 5 and depending on the random number generated, let the user know.
+    // than 5, less than 5 or equal 5 and depending on the umber entered by the user & let the user know.
     // 5. Is this valid code in Rust? Please explain and correct if necessary.
     // fn is_zero(x: i32) -> bool {
     //    if x {
@@ -188,4 +189,57 @@ fn main() {
     // }
     // 6. Is 'if' an expression or a statement? What are the implications in code.
     // 7. If you have too many else if expressions what could you use instead?
+
+    // == Answers 20/09  ==
+    // 1 & 2. Yes the return type is neccessary, except when it is the unit type ().
+    // return types are not always necessary as functions are expresions so as in
+    // plus_one below, as the semi colon is missing the function implicily returns x + 1
+    // The code in 3. is incorrect as it returns () not i32 as there is a semi-colon. The
+    // code below is correct.
+    let result = plus_one(39);
+    println!("Result of plus one --> {result} ");
+    // 5.  Pointles function to illustrate branching
+    pointless_function();
+    // 6. The if expresssion is not correct because if expressions must be comparisons resulting in a boolean.
+    // .  In the example above if x is if x:i32 where x is not a boolean but a signed 32 bit integer
+    // Please see corrected is_zero below
+    let num = is_zero(-8);
+    println!("Number is zero == {num} ");
+} // fn main
+
+fn plus_one(x: i32) -> i32 {
+    x + 1
+}
+
+fn pointless_function() {
+    let mut entry = String::new();
+    let number: i32 = loop {
+        println!("Please input your number.");
+
+        io::stdin()
+            .read_line(&mut entry)
+            .expect("Failed to read line");
+
+        let entry: i32 = match entry.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        break entry;
+    };
+    if number > 5 {
+        println!("Number  {number} is greater than 5");
+    } else if number < 5 {
+        println!("Number  {number} is less than 5");
+    } else {
+        println!("Number is 5");
+    };
+    println!("Duh!!");
+}
+
+fn is_zero(x: i32) -> bool {
+    if x == 0 {
+        true
+    } else {
+        false
+    }
 }

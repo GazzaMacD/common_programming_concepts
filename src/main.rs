@@ -222,6 +222,12 @@ fn main() {
     println!("30 degrees C in fahrenheit is {from_celsius}");
     let from_fahrenheit = convert_temperature(101.9, 'f');
     println!("101.9 F in celsius is {from_fahrenheit}");
+
+    let r1 = "string literal";
+    let r2 = r1;
+    // the following code works because r1 is a string literal so copy is called
+    println!("this works, {r1}");
+    println!("this works, {r2}");
 } // fn main
 
 fn plus_one(x: i32) -> i32 {
@@ -336,7 +342,12 @@ fn takes_and_gives_back(a_string: String) -> String {
 
 // c.  =============================
 
-
+// ================ References and Borrowing ========================
+//1. What is a reference, and how does it differ from a pointer?
+//2. How do you indicate a reference?
+//3. Are references mutable by default?
+//4. How would you change a reference to be mutable?
+//5. How many mutable references to a variable can you have at one time? Why?
 
 
 
